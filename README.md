@@ -2,7 +2,7 @@
 
 # 你好，我是 Yufei 👋
 
-### AI Agent 工程 · Agent 基础设施 · LLM 评测与推理部署
+### AI Agent 工程 · LLM 评测与推理部署
 
 [![GitHub](https://img.shields.io/badge/GitHub-fei121-181717?logo=github&logoColor=white)](https://github.com/fei121)
 [![Focus](https://img.shields.io/badge/Focus-AI%20Agent-6C63FF)](https://github.com/fei121)
@@ -22,7 +22,6 @@
 | 方向 | 工程实践 |
 | --- | --- |
 | **Agent 系统** | ReAct、多跳检索、工具调用、证据验证、运行时降级与上下文保护 |
-| **Agent 基础设施** | OpenAPI 工具知识库、MCP、混合检索、长期记忆与上下文压缩 |
 | **领域智能服务** | PDF / OCR 文档理解、Schema 驱动抽取、保险条款与理赔材料结构化 |
 | **评测与可观测性** | 参数扫描、规则评测、LLM-as-a-Judge、Pareto 分析、Langfuse |
 | **AI Infra** | 后训练量化、vLLM / TensorRT-LLM 部署、吞吐与尾延迟分析 |
@@ -45,13 +44,11 @@
 - 面向发票、身份证、银行卡和病历等理赔材料，提供 OCR + LLM 的统一结构化 API。
 - 支持 JSON Schema 驱动的通用字段抽取、专用字段校验、病历与发票匹配，以及可插拔 OCR 路由。
 
-## Agent 基础设施
+### [Agent-Tool-Index](https://github.com/fei121/Agent-Tool-Index) — Agent 工具检索平台
 
-### [Agent-Tool-Index](https://github.com/fei121/Agent-Tool-Index) — Agent 工具发现中间服务
-
-- 将多个系统的 OpenAPI 文档构建为统一工具知识库，让 Agent 先搜索候选 API，再按需获取完整文档。
-- 提供向量检索、SQLite FTS5 BM25、跨知识库融合排序、证据片段回查，以及 MCP / HTTP 接口。
-- 服务边界止于“发现工具并返回文档”，实际业务 API 仍由 Agent 调用。
+- 将分散在多个系统中的 OpenAPI 文档构建为统一工具知识库，帮助 Agent 从大量 API 中准确找到所需能力。
+- 采用“先检索、后加载”的工具使用方式，避免一次性向上下文注入全部定义，降低上下文占用与工具选择难度。
+- 提供向量检索、SQLite FTS5 BM25、跨知识库融合排序、完整文档回查，以及 MCP / HTTP 接入能力。
 
 ## Agent 评测
 
