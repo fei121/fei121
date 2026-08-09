@@ -26,7 +26,16 @@
 | **领域智能服务** | PDF / OCR 文档理解、Schema 驱动抽取、保险条款与理赔材料结构化 |
 | **评测与可观测性** | 参数扫描、规则评测、LLM-as-a-Judge、Pareto 分析、Langfuse |
 | **AI Infra** | 后训练量化、vLLM / TensorRT-LLM 部署、吞吐与尾延迟分析 |
-| **系统工程** | C++20、位精确计算、CMake、跨平台 CI 与穷举验证 |
+| **C++** | C++20、位精确计算、CMake、跨平台 CI 与穷举验证 |
+
+## 论文
+
+### [UniFormer-Based Dual Quaternion Network for Visual Odometry](https://ieeexplore.ieee.org/document/11578290)
+
+**Yufei Feng**, Chang Xu, Chenggui Yao, Bailu Si, Changgui Gu, Dongping Yang · *IEEE Robotics and Automation Letters*, 2026 · [DOI: 10.1109/LRA.2026.3707344](https://doi.org/10.1109/LRA.2026.3707344)
+
+- 提出 UDQN-VO，将 UniFormerV2、单位双四元数流形、可微 QCQP 求解器与 Rotation-Guided Transformer 结合，在统一几何表示中联合建模旋转与平移。
+- 在 KITTI、TUM、ZJH-VO、4Seasons 和 EuRoC 数据集上验证模型的精度、跨场景适用性与实时推理能力。
 
 ## Agent 应用
 
@@ -67,7 +76,7 @@
 - 参与腾讯云开源 Agent Memory 项目，关注本地长期记忆、符号化短期记忆与分层信息组织。
 - 提交的 [PR #174：align config default comments](https://github.com/TencentCloud/TencentDB-Agent-Memory/pull/174) 已合并至上游主分支。
 
-## AI Infra 实验
+## AI Infra
 
 ### [Qwen3-8B-Quantization](https://github.com/fei121/Qwen3-8B-Quantization) — 后训练量化与误差归因
 
@@ -80,7 +89,7 @@
 - 在相同 300 请求、20 并发、4K 输入 / 1K 输出负载下，对比 RTX PRO 6000 单卡与双卡部署。
 - 双卡输出吞吐提升 **38.4%**、P99 TTFT 从 **6.28 s** 降至 **1.85 s**，并分析扩展效率与 GPU 成本权衡。
 
-## C++ / 系统工程
+## C++
 
 ### [GammaVRR](https://github.com/fei121/GammaVRR) — 位精确 C++ Golden Model
 
@@ -100,13 +109,3 @@
   <img src="https://img.shields.io/badge/TensorRT--LLM-推理加速-76B900?logo=nvidia&logoColor=white" alt="TensorRT-LLM" />
   <img src="https://img.shields.io/badge/Langfuse-可观测性-F7B955" alt="Langfuse" />
 </p>
-
-## 当前关注
-
-- 构建可靠、可评测、可观测的 AI Agent 系统。
-- 优化 Agent 的工具发现、知识检索、记忆与上下文使用效率。
-- 将模型能力沉淀为可复现、可部署的工程服务。
-
-## 联系方式
-
-欢迎通过 [GitHub @fei121](https://github.com/fei121) 交流 AI Agent、LLM 评测、推理部署与开源工程实践。
