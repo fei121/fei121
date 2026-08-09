@@ -28,15 +28,6 @@
 | **AI Infra** | 后训练量化、vLLM / TensorRT-LLM 部署、吞吐与尾延迟分析 |
 | **C++** | C++20、位精确计算、CMake、跨平台 CI 与穷举验证 |
 
-## 论文
-
-### [UniFormer-Based Dual Quaternion Network for Visual Odometry](https://ieeexplore.ieee.org/document/11578290)
-
-**Yufei Feng**, Chang Xu, Chenggui Yao, Bailu Si, Changgui Gu, Dongping Yang · *IEEE Robotics and Automation Letters*, 2026 · [DOI: 10.1109/LRA.2026.3707344](https://doi.org/10.1109/LRA.2026.3707344)
-
-- 提出 UDQN-VO，将 UniFormerV2、单位双四元数流形、可微 QCQP 求解器与 Rotation-Guided Transformer 结合，在统一几何表示中联合建模旋转与平移。
-- 在 KITTI、TUM、ZJH-VO、4Seasons 和 EuRoC 数据集上验证模型的精度、跨场景适用性与实时推理能力。
-
 ## Agent 应用
 
 ### [DeepResearch](https://github.com/fei121/DeepResearch) — 深度检索 Agent
@@ -109,3 +100,12 @@
   <img src="https://img.shields.io/badge/TensorRT--LLM-推理加速-76B900?logo=nvidia&logoColor=white" alt="TensorRT-LLM" />
   <img src="https://img.shields.io/badge/Langfuse-可观测性-F7B955" alt="Langfuse" />
 </p>
+
+## 论文
+
+### [UniFormer-Based Dual Quaternion Network for Visual Odometry](https://ieeexplore.ieee.org/document/11578290)
+
+**Yufei Feng**, Chang Xu, Chenggui Yao, Bailu Si, Changgui Gu, Dongping Yang · *IEEE Robotics and Automation Letters*（计算机科学 2区 Top）, 2026 · [DOI: 10.1109/LRA.2026.3707344](https://doi.org/10.1109/LRA.2026.3707344)
+
+- 提出 UDQN-VO，将 UniFormerV2、单位双四元数流形、可微 QCQP 求解器与 Rotation-Guided Transformer 结合，在统一几何表示中联合建模旋转与平移。
+- 在 KITTI、TUM、ZJH-VO、4Seasons 和 EuRoC 数据集上验证模型的精度、跨场景适用性与实时推理能力。
