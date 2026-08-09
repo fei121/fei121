@@ -87,7 +87,7 @@
 ## 技术栈
 
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=py,cpp,pytorch,fastapi,docker,sqlite,linux,git,cmake" alt="Python, C++, PyTorch, FastAPI, Docker, SQLite, Linux, Git, CMake" />
+  <img src="https://skillicons.dev/icons?i=py,cpp,rust,pytorch,fastapi,docker,kubernetes,redis,kafka,sqlite,linux,git,cmake" alt="Python, C++, Rust, PyTorch, FastAPI, Docker, Kubernetes, Redis, Kafka, SQLite, Linux, Git, CMake" />
 </p>
 
 <p>
