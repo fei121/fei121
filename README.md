@@ -2,107 +2,75 @@
 
 # 你好，我是 Yufei 👋
 
-### AI Agent 工程 · LLM 评测与推理部署
+### AI Agent 工程 · LLM 算法与推理优化
+
+**我关注一件事：把模型能力变成可运行、可评测、可观测的工程系统。**
+
+从 ReAct、多跳检索与工具发现，到领域文档理解、LLM 评测、模型量化和推理部署。
 
 [![GitHub](https://img.shields.io/badge/GitHub-fei121-181717?logo=github&logoColor=white)](https://github.com/fei121)
-[![Focus](https://img.shields.io/badge/Focus-AI%20Agent-6C63FF)](https://github.com/fei121)
-[![Python](https://img.shields.io/badge/Python-工程实践-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Focus](https://img.shields.io/badge/Focus-Agent%20Engineering-6C63FF)](#精选项目)
+[![Python](https://img.shields.io/badge/Python-Engineering-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![C++](https://img.shields.io/badge/C%2B%2B-20-00599C?logo=cplusplus&logoColor=white)](https://isocpp.org/)
 
 </div>
 
-## 关于我
+## 30 秒了解我
 
-我主要关注 **AI Agent 的工程化落地**：从 ReAct 推理循环、工具发现与检索，到领域文档理解、质量评测、上下文管理和服务化部署。
+- **Agent 系统**：做过深度检索、工具检索、保险条款拆解与理赔文档结构化，关注的不只是主流程，也包括证据验证、上下文预算、失败降级和可观测性。
+- **LLM 评测与推理**：搭建联网搜索评测流水线；完成 Qwen3-8B 多量化链路对照与误差归因，vLLM INT8 输出吞吐由 **261 提升至 1,085 tokens/s**。
+- **性能分析**：在统一负载下评测 RTX PRO 6000 单卡/双卡 vLLM 服务，双卡输出吞吐提升 **38.4%**，P99 TTFT 从 **6.28 s 降至 1.85 s**。
+- **研究与工程基础**：以第一作者在 *IEEE Robotics and Automation Letters* 发表视觉里程计论文；也使用 C++20 编写位精确 Golden Model，并完成 **1,572,864** 组穷举验证。
 
-除了 Agent 应用，我也持续实践支撑 Agent 落地的 **LLM 评测与 AI Infra**，包括联网搜索评测、模型量化、vLLM 推理部署与性能分析。我的项目强调可运行、可评测、可观测和可复现，而不只停留在 Demo。
+## 精选项目
 
-## 能力地图
+### 🔎 [DeepResearch](https://github.com/fei121/DeepResearch) · 深度检索 Agent
 
-| 方向 | 工程实践 |
-| --- | --- |
-| **Agent 系统** | ReAct、多跳检索、工具调用、证据验证、运行时降级与上下文保护 |
-| **领域智能服务** | PDF / OCR 文档理解、Schema 驱动抽取、保险条款与理赔材料结构化 |
-| **评测与可观测性** | 参数扫描、规则评测、LLM-as-a-Judge、Pareto 分析、Langfuse |
-| **AI Infra** | 后训练量化、vLLM / TensorRT-LLM 部署、吞吐与尾延迟分析 |
-| **C++** | C++20、位精确计算、CMake、跨平台 CI 与穷举验证 |
+面向复杂问题自主完成拆解、搜索规划、网页阅读、证据提取与多源交叉验证。基于 ReAct 构建动态推理循环，并为弱搜索结果、网页访问失败、超时、轮次和上下文预算设计完整降级路径。
 
-## Agent 应用
+`ReAct` `Multi-hop Search` `Evidence Verification` `FastAPI` `SSE`
 
-### [DeepResearch](https://github.com/fei121/DeepResearch) — 深度检索 Agent
+### 🧰 [Agent-Tool-Index](https://github.com/fei121/Agent-Tool-Index) · Agent 工具检索平台
 
-- 基于 ReAct 循环完成问题拆解、搜索规划、网页阅读、证据提取与多源交叉验证。
-- 支持中英文双搜索源路由、弱结果自动降级、SSE 心跳，以及超时、轮次和上下文预算保护。
+把多个系统的 OpenAPI 文档构建为统一工具知识库，让 Agent 从“预先加载所有工具”转向“先检索、再按需读取”。支持向量检索 + SQLite FTS5 BM25、跨知识库融合排序、完整文档回查，以及 MCP / HTTP 接入。
 
-### [ClauseMind](https://github.com/fei121/ClauseMind) — 保险条款智能拆解
+`OpenAPI` `Hybrid Retrieval` `MCP` `SQLite FTS5` `Python`
 
-- 将保险条款 PDF 转换为可计算的结构化责任数据，覆盖责任范围、等待期、既往症和责任免除等字段。
-- 组合 PDF 解析、Markdown 结构化、FAISS / BM25 混合检索、LangGraph 工作流、字段级置信度与缓存机制。
+### ⚡ [Qwen3-8B Quantization Lab](https://github.com/fei121/Qwen3-8B-Quantization) · 量化、部署与误差归因
 
-### [ClaimDoc](https://github.com/fei121/ClaimDoc) — 理赔文档理解与结构化
+统一对比 vLLM + LLM Compressor、AutoRound + vLLM、TensorRT-LLM + ModelOpt 三条链路；不仅报告精度与吞吐，还通过 hidden-state cosine、SQNR、模块跳过和累计消融，把异常掉点定位到 `mlp.down_proj`。
 
-- 面向发票、身份证、银行卡和病历等理赔材料，提供 OCR + LLM 的统一结构化 API。
-- 支持 JSON Schema 驱动的通用字段抽取、专用字段校验、病历与发票匹配，以及可插拔 OCR 路由。
+`vLLM` `TensorRT-LLM` `INT8 / MXFP4` `Ablation Study` `Performance Analysis`
 
-### [Agent-Tool-Index](https://github.com/fei121/Agent-Tool-Index) — Agent 工具检索平台
+## 更多工程实践
 
-- 将分散在多个系统中的 OpenAPI 文档构建为统一工具知识库，帮助 Agent 从大量 API 中准确找到所需能力。
-- 采用“先检索、后加载”的工具使用方式，避免一次性向上下文注入全部定义，降低上下文占用与工具选择难度。
-- 提供向量检索、SQLite FTS5 BM25、跨知识库融合排序、完整文档回查，以及 MCP / HTTP 接入能力。
+| 项目 | 解决的问题 | 值得看的工程点 |
+| --- | --- | --- |
+| [ClauseMind](https://github.com/fei121/ClauseMind) | 将保险条款 PDF 转换为可计算的责任数据 | PDF / OCR、FAISS + BM25、LangGraph、字段级置信度与缓存 |
+| [ClaimDoc](https://github.com/fei121/ClaimDoc) | 将发票、证件和病历统一抽取为结构化数据 | JSON Schema 驱动抽取、字段校验、材料匹配、可插拔 OCR |
+| [LLM-SearchEval](https://github.com/fei121/LLM-SearchEval) | 评估模型何时搜索、引用是否可靠、信息是否及时 | 参数扫描、双 LLM Judge、人工复核分流、Pareto 分析、Langfuse |
+| [Qwen3.6 × RTX PRO 6000](https://github.com/fei121/Qwen3.6-PRO6000-vLLM-Benchmark) | 回答 vLLM 服务该用一张卡还是两张卡 | 统一负载、吞吐/尾延迟分析、扩展效率与 GPU 成本权衡 |
+| [GammaVRR](https://github.com/fei121/GammaVRR) | 为刷新率相关 Gamma 补偿提供软件参考实现 | C++20 位精确计算、C API、CMake、跨平台 CI、穷举数值验证 |
 
-## Agent 评测
+## 研究与开源
 
-### [LLM-SearchEval](https://github.com/fei121/LLM-SearchEval) — LLM 联网搜索评测框架
+### 📄 [UniFormer-Based Dual Quaternion Network for Visual Odometry](https://doi.org/10.1109/LRA.2026.3707344)
 
-- 评估模型是否正确触发搜索、引用是否可追溯、信息是否具备时效性，并记录延迟、Token 和搜索次数。
-- 支持参数扫描、规则指标、双 LLM Judge、人工复核分流、Pareto 权衡分析和科研风格可视化。
+**Yufei Feng**, Chang Xu, Chenggui Yao, Bailu Si, Changgui Gu, Dongping Yang<br>
+*IEEE Robotics and Automation Letters*, 2026
 
-## 开源贡献
+将 UniFormerV2、单位双四元数流形、可微 QCQP 求解器与 Rotation-Guided Transformer 组合，在统一几何表示中联合建模旋转和平移，并在 KITTI、TUM、ZJH-VO、4Seasons 与 EuRoC 上完成验证。
 
-### [TencentDB-Agent-Memory](https://github.com/fei121/TencentDB-Agent-Memory)
+### 🤝 [TencentDB-Agent-Memory](https://github.com/fei121/TencentDB-Agent-Memory)
 
-- 参与腾讯云开源 Agent Memory 项目，关注本地长期记忆、符号化短期记忆与分层信息组织。
-- 提交的 [PR #174：align config default comments](https://github.com/TencentCloud/TencentDB-Agent-Memory/pull/174) 已合并至上游主分支。
-
-## AI Infra
-
-### [Qwen3-8B-Quantization](https://github.com/fei121/Qwen3-8B-Quantization) — 后训练量化与误差归因
-
-- 对比 vLLM + LLM Compressor、AutoRound + vLLM、TensorRT-LLM + ModelOpt 三条量化与部署链路。
-- 在统一 GSM8K / C-Eval 口径下评测 BF16、INT8 与 MXFP4，并通过 hidden-state cosine、SQNR 和模块消融定位量化误差。
-- vLLM INT8 W8A8 输出吞吐从 **261 tokens/s** 提升至 **1,085 tokens/s**，同时保持接近 BF16 的评测精度。
-
-### [Qwen3.6-PRO6000-vLLM-Benchmark](https://github.com/fei121/Qwen3.6-PRO6000-vLLM-Benchmark) — vLLM 部署实验
-
-- 在相同 300 请求、20 并发、4K 输入 / 1K 输出负载下，对比 RTX PRO 6000 单卡与双卡部署。
-- 双卡输出吞吐提升 **38.4%**、P99 TTFT 从 **6.28 s** 降至 **1.85 s**，并分析扩展效率与 GPU 成本权衡。
-
-## C++
-
-### [GammaVRR](https://github.com/fei121/GammaVRR) — 位精确 C++ Golden Model
-
-- 使用 C++20 实现刷新率等级相关 Gamma 补偿的软件参考模型，覆盖定点插值、舍入、饱和与旁路语义。
-- 提供 C / C++ 接口、CMake 构建、跨平台 CI，并对 **1,572,864** 种像素、等级和通道组合进行独立数值验证。
+参与腾讯云开源 Agent Memory 项目；提交的 [PR #174：align config default comments](https://github.com/TencentCloud/TencentDB-Agent-Memory/pull/174) 已合并至上游主分支。
 
 ## 技术栈
 
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=py,cpp,rust,pytorch,fastapi,docker,kubernetes,redis,kafka,sqlite,linux,git,cmake" alt="Python, C++, Rust, PyTorch, FastAPI, Docker, Kubernetes, Redis, Kafka, SQLite, Linux, Git, CMake" />
+**Agent / LLM** · ReAct · LangGraph · MCP · RAG · LLM-as-a-Judge · Langfuse<br>
+**Serving / Infra** · vLLM · TensorRT-LLM · PyTorch · FastAPI · Docker · Redis · Kafka<br>
+**Engineering** · Python · C++20 · Rust · Linux · Git · CMake · SQLite
+
+<p align="center">
+  <a href="https://github.com/fei121?tab=repositories"><b>查看全部项目 →</b></a>
 </p>
-
-<p>
-  <img src="https://img.shields.io/badge/LangGraph-Agent%20Workflow-1C3C3C" alt="LangGraph" />
-  <img src="https://img.shields.io/badge/MCP-Agent%20Tools-7357FF" alt="MCP" />
-  <img src="https://img.shields.io/badge/vLLM-推理部署-00A67E" alt="vLLM" />
-  <img src="https://img.shields.io/badge/TensorRT--LLM-推理加速-76B900?logo=nvidia&logoColor=white" alt="TensorRT-LLM" />
-  <img src="https://img.shields.io/badge/Langfuse-可观测性-F7B955" alt="Langfuse" />
-</p>
-
-## 论文
-
-### [UniFormer-Based Dual Quaternion Network for Visual Odometry](https://ieeexplore.ieee.org/document/11578290)
-
-**Yufei Feng**, Chang Xu, Chenggui Yao, Bailu Si, Changgui Gu, Dongping Yang · *IEEE Robotics and Automation Letters*（计算机科学 2区 Top）, 2026 · [DOI: 10.1109/LRA.2026.3707344](https://doi.org/10.1109/LRA.2026.3707344)
-
-- 提出 UDQN-VO，将 UniFormerV2、单位双四元数流形、可微 QCQP 求解器与 Rotation-Guided Transformer 结合，在统一几何表示中联合建模旋转与平移。
-- 在 KITTI、TUM、ZJH-VO、4Seasons 和 EuRoC 数据集上验证模型的精度、跨场景适用性与实时推理能力。
