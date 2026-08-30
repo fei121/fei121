@@ -17,7 +17,7 @@
 - **LLM量化、推理、评测**：搭建联网搜索评测Pipeline；完成 Qwen3-8B 多量化链路对照与误差归因，vLLM INT8 输出吞吐由 **261 提升至 1,085 tokens/s**。([Qwen3-8B Quantization Lab](https://github.com/fei121/Qwen3-8B-Quantization))
 - **LLM部署分析**：在统一负载下评测qwen3.6-35b-a3b-fp8在 RTX PRO 6000 单卡/双卡 vLLM 服务，双卡输出吞吐提升 **38.4%**，P99 TTFT 从 **6.28 s 降至 1.85 s**。([Qwen3.6 × RTX PRO 6000](https://github.com/fei121/Qwen3.6-PRO6000-vLLM-Benchmark))
 - **算法研究**：熟悉LLM、NLP、CV算法，以第一作者在 *IEEE Robotics and Automation Letters* 发表视觉算法论文；([Paper](https://doi.org/10.1109/LRA.2026.3707344))
-- **工程项目**：为显示芯片做补偿验证，使用 C++精确 Golden Model，并完成 **1,572,864** 组穷举验证。[RefreshTone](https://github.com/fei121/RefreshTone)
+- **工程项目**：为显示芯片做补偿验证，使用 C++精确 Golden Model，并完成 **1,572,864** 组穷举验证。([RefreshTone](https://github.com/fei121/RefreshTone))
 
 ## 精选项目
 
