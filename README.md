@@ -2,11 +2,7 @@
 
 # 你好，我是 Yufei 👋
 
-### AI Agent 工程 · LLM 算法与推理优化
-
-**我关注一件事：让 Agent 从“会回答”走向“会做事”，把推理、工具与反馈闭环落到真实系统中。**
-
-从 ReAct、多跳检索与工具发现，到领域文档理解、LLM 评测、模型量化和推理部署。
+### AI Agent 工程 · LLM 算法 · 推理优化
 
 [![GitHub](https://img.shields.io/badge/GitHub-fei121-181717?logo=github&logoColor=white)](https://github.com/fei121)
 [![Focus](https://img.shields.io/badge/Focus-Agent%20Engineering-6C63FF)](#精选项目)
@@ -15,12 +11,13 @@
 
 </div>
 
-## 30 秒了解我
+## 个人概述
 
-- **Agent 系统**：做过深度检索、工具检索、保险条款拆解与理赔文档结构化，关注的不只是主流程，也包括证据验证、上下文预算、失败降级和可观测性。
-- **LLM 评测与推理**：搭建联网搜索评测流水线；完成 Qwen3-8B 多量化链路对照与误差归因，vLLM INT8 输出吞吐由 **261 提升至 1,085 tokens/s**。
-- **性能分析**：在统一负载下评测 RTX PRO 6000 单卡/双卡 vLLM 服务，双卡输出吞吐提升 **38.4%**，P99 TTFT 从 **6.28 s 降至 1.85 s**。
-- **研究与工程基础**：以第一作者在 *IEEE Robotics and Automation Letters* 发表视觉算法论文；也使用 C++20 编写位精确 Golden Model，并完成 **1,572,864** 组穷举验证。
+- **Agent开发**：具身型Agent（FangOS，Forklift，[Agent-Tool-Index](https://github.com/fei121/Agent-Tool-Index)），业务型Agent（[ClauseMind](https://github.com/fei121/ClauseMind)、[ClaimDoc](https://github.com/fei121/ClaimDoc)）、研究型Agent（[DeepResearch](https://github.com/fei121/DeepResearch)）
+- **LLM量化、推理、评测**：搭建联网搜索评测Pipeline；完成 Qwen3-8B 多量化链路对照与误差归因，vLLM INT8 输出吞吐由 **261 提升至 1,085 tokens/s**。([Qwen3-8B Quantization Lab](https://github.com/fei121/Qwen3-8B-Quantization))
+- **LLM部署分析**：在统一负载下评测qwen3.6-35b-a3b-fp8在 RTX PRO 6000 单卡/双卡 vLLM 服务，双卡输出吞吐提升 **38.4%**，P99 TTFT 从 **6.28 s 降至 1.85 s**。([Qwen3.6 × RTX PRO 6000](https://github.com/fei121/Qwen3.6-PRO6000-vLLM-Benchmark))
+- **算法研究**：熟悉LLM、NLP、CV算法，以第一作者在 *IEEE Robotics and Automation Letters* 发表视觉算法论文；([Paper](https://doi.org/10.1109/LRA.2026.3707344))
+- **工程项目**：为显示芯片做补偿验证，使用 C++精确 Golden Model，并完成 **1,572,864** 组穷举验证。[RefreshTone](https://github.com/fei121/RefreshTone)
 
 ## 精选项目
 
@@ -57,7 +54,7 @@
 | [Qwen3-8B Quantization Lab](https://github.com/fei121/Qwen3-8B-Quantization) | 对比量化与部署链路并定位精度损失来源 | vLLM / TensorRT-LLM、INT8 / MXFP4、SQNR、模块消融与性能分析 |
 | [LLM-SearchEval](https://github.com/fei121/LLM-SearchEval) | 评估模型何时搜索、引用是否可靠、信息是否及时 | 参数扫描、双 LLM Judge、人工复核分流、Pareto 分析、Langfuse |
 | [Qwen3.6 × RTX PRO 6000](https://github.com/fei121/Qwen3.6-PRO6000-vLLM-Benchmark) | 回答 vLLM 服务该用一张卡还是两张卡 | 统一负载、吞吐/尾延迟分析、扩展效率与 GPU 成本权衡 |
-| [GammaVRR](https://github.com/fei121/GammaVRR) | 为刷新率相关 Gamma 补偿提供软件参考实现 | C++20 位精确计算、C API、CMake、跨平台 CI、穷举数值验证 |
+| [RefreshTone](https://github.com/fei121/RefreshTone) | 为刷新率相关 Gamma 补偿提供软件参考实现 | C++20 位精确计算、C API、CMake、跨平台 CI、穷举数值验证 |
 
 ## 研究与开源
 
@@ -77,7 +74,3 @@
 **Agent / LLM** · ReAct · LangGraph · MCP · RAG · LLM-as-a-Judge · Langfuse<br>
 **Serving / Infra** · vLLM · TensorRT-LLM · PyTorch · FastAPI · Docker · Redis · Kafka<br>
 **Engineering** · Python · C++20 · Rust · Linux · Git · CMake · SQLite
-
-<p align="center">
-  <a href="https://github.com/fei121?tab=repositories"><b>查看全部项目 →</b></a>
-</p>
