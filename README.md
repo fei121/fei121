@@ -53,7 +53,7 @@
 | --- | --- | --- |
 | [Qwen3-8B Quantization Lab](https://github.com/fei121/Qwen3-8B-Quantization) | 对比量化与部署链路并定位精度损失来源 | vLLM / TensorRT-LLM、INT8 / MXFP4、SQNR、模块消融与性能分析 |
 | [LLM-SearchEval](https://github.com/fei121/LLM-SearchEval) | 评估模型何时搜索、引用是否可靠、信息是否及时 | 参数扫描、双 LLM Judge、人工复核分流、Pareto 分析、Langfuse |
-| [Qwen3.6 × RTX PRO 6000](https://github.com/fei121/Qwen3.6-PRO6000-vLLM-Benchmark) | 回答 vLLM 服务该用一张卡还是两张卡 | 统一负载、吞吐/尾延迟分析、扩展效率与 GPU 成本权衡 |
+| [Qwen-Infer](https://github.com/fei121/Qwen-vLLM-Benchmark) | 用vLLM 推理Qwen系列，分析单卡多卡性能 | 统一负载、吞吐/尾延迟分析、扩展效率与 GPU 成本权衡 |
 | [RefreshTone](https://github.com/fei121/RefreshTone) | 为刷新率相关 Gamma 补偿提供软件参考实现 | C++20 位精确计算、C API、CMake、跨平台 CI、穷举数值验证 |
 
 ## 研究与开源
